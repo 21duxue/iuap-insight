@@ -361,6 +361,13 @@ class Hubble {
     return this._getCookie("mdd_monitor_record") === "true"
   }
 
+    /**
+   * 查询开始时间和结束时间
+   */
+  _getTimeRange () {
+    
+  }
+
 
 
 }
