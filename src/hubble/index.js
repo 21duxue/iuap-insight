@@ -107,7 +107,11 @@ class Hubble {
    * 发起jsonp调用
    */
   _callRecord (uid = this._getCookie("mdd_monitor_uid"), userId) {
-    let recordUrl = `${this.config.url}?uid=${uid}`;
+    let isDiwork = Object.prototype.toString.call(window.jDiwork) === "[object Object]"
+    && window.jDiwork.getContext
+    && typeof window.jDiwork.getContext === "function";
+
+    let recordUrl = `${this.config.url}?uid=${uid}&isDiwork=${isDiwork}`;
     if (userId) {
       recordUrl += `&userId=${userId}`
     }
